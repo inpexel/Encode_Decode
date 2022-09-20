@@ -10,7 +10,7 @@
             fullData.push(charEncode);
         }
 
-        let newFullData = fullData.map(data => (data / 2) + 3 +(data / 3) * 1.5);
+        let newFullData = fullData.map(data => (data / 3) + 6);
         let recoverFullData = newFullData.map(data => (data * 2) - 18);
         let numToString = newFullData.map(data => String.fromCharCode(data));
         let output = numToString.join('');
