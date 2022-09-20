@@ -9,20 +9,22 @@ function getPassword(){
 }
 
 function encode(data){
-    let dataLength = data.length;
     let fullData =[];
-    for(let i=0; i<dataLength; i++){
+    // let output = [];
+    for(let i=0; i<data.length; i++){
         let charEncode = data.charCodeAt(i);
         console.log(charEncode);
         fullData.push(charEncode);
     }
-    let newFullData = fullData.map(data => (data / 2) + 9);
+    let newFullData = fullData.map(data => (data / 2) + 3 +(data / 3) * 1.5);
     let recoverFullData = newFullData.map(data => (data * 2) - 18);
+    let numToString = newFullData.map(data => String.fromCharCode(data));
+    let output = numToString.join('')
 
-    let output = String.fromCharCode(newFullData);
-    // console.log('data =>',fullData );
-    // console.log('new data =>',newFullData );
-    // console.log('recover data =>',recoverFullData );
+    
+    // output.push(String.fromCharCode(newFullData));
+    console.log(fullData)
+    console.log(newFullData)
     console.log(output)
     return output;
 }
